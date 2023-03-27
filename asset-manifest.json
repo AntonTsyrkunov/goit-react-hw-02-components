@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/AntonTsyrkunov/goit-react-hw-02-phonebook/static/css/main.7acaea2f.css",
+    "main.js": "/AntonTsyrkunov/goit-react-hw-02-phonebook/static/js/main.6121c579.js",
+    "index.html": "/AntonTsyrkunov/goit-react-hw-02-phonebook/index.html",
+    "main.7acaea2f.css.map": "/AntonTsyrkunov/goit-react-hw-02-phonebook/static/css/main.7acaea2f.css.map",
+    "main.6121c579.js.map": "/AntonTsyrkunov/goit-react-hw-02-phonebook/static/js/main.6121c579.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.6121c579.js"
+  ]
+}
