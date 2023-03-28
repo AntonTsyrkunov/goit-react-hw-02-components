@@ -1,8 +1,4 @@
 import { Component } from 'react';
-import {
-  countPositiveFeedbackPercentage,
-  countTotalFeedback,
-} from '../../utils';
 import FeedbackOptions from 'components/FeedbackOptions/FeedbackOptions';
 import Section from 'components/Section/Section';
 import Statistics from 'components/Statistics/Statistics';
@@ -16,6 +12,15 @@ class FeedbackStatistics extends Component {
     neutral: 0,
     bad: 0,
   };
+
+  countPositiveFeedbackPercentage = (total, good) => {
+    return (total === 0 ? '0' : Math.round((good/total)*100));
+}
+
+countTotalFeedback = (state) => {
+  const values = Object.values(state);
+  return values.reduce((acc, value) => acc+value)
+}
 
   checkFeedbackState = () => 
     Object.values(this.state).some((i) => i>0);
@@ -46,9 +51,9 @@ class FeedbackStatistics extends Component {
           good={this.state.good} 
           neutral={this.state.neutral} 
           bad={this.state.bad} 
-          total={countTotalFeedback(this.state)} 
-          positivePercentage={countPositiveFeedbackPercentage(
-            countTotalFeedback(this.state),
+          total={this.countTotalFeedback(this.state)} 
+          positivePercentage={this.countPositiveFeedbackPercentage(
+            this.countTotalFeedback(this.state),
             this.state.good
           )}/>
           : <Notification message="There is no feedback"/>}
